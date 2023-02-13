@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>OpenShift Container Native Virtualization Demos</title>
+      <link>https://rh-telco-tigers.github.io/posts/cnv_demos/</link>
+      <pubDate>Mon, 13 Feb 2023 15:42:47 -0500</pubDate>
+      
+      <guid>https://rh-telco-tigers.github.io/posts/cnv_demos/</guid>
+      <description>Kicking the Tires on OpenShift Virtualization contains a two how workshop on deploying virtual machines inside OpenShift leveraging CNV.</description>
+    </item>
+    
+    <item>
       <title>About Us</title>
       <link>https://rh-telco-tigers.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
