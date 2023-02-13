@@ -1,5 +1,24 @@
 # rh-telco-tigers.github.io source repository
 
+This is the source repository for [rh-telco-tigers.github.io](https://rh-telco-tigers.github.io)
+
+## Using this repo
+
+1. Install Hugo: [Installing Hugo](https://gohugo.io/installation/)
+2. Clone this repo `git clone git@github.com:rh-telco-tigers/rh-telco-tigers.github.io.git`
+3. `cd rh-telco-tigers.github.io.git`
+4. This project uses submodules so we need to init the sub module
+    - `git submodule update --init --recursive`
+4. `hugo new posts/<my new page title>.md`
+5. edit file called `content/posts/<my new page title>.md`
+6. run `hugo server` and open [http://localhost:1313](http://localhost:1313) in your browser
+7. review your new content
+8. Commit your new page
+    - `git add content/posts/<my new page title>.md`
+    - `git commit -m "adding new post"`
+    - `git push`
+
+
 ## Page Theme
 
 base on https://github.com/adityatelange/hugo-PaperMod
