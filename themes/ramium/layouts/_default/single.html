@@ -18,6 +18,15 @@
                     {{ partial "time-to-read.html" . }}
                 </p>
             </div>
+
+            <div class="level-item">
+                <p class="subtitle info"> |
+                    {{ range $k, $v := .Param "authors" }}
+                    {{- if $k }}, {{ end }}
+                       {{ . }}
+                    {{ end }}
+                </p>
+            </div>
         </div>
         <div class="level-right is-hidden-touch">
             <div class="tags">
