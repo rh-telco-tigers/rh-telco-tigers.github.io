@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://rh-telco-tigers.github.io/sitemap.xml
