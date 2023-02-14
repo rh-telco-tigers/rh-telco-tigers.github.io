@@ -12,7 +12,7 @@ enableemoji = false
 
 [params]
     description = "A description for the meta tag of the site"
-    googleSearch = "google-search-code"
+    googleSearch = "f1a47ecc2081e40b1"
     showDate = true # make false if dont want to show date for evergeen articles
     math = false # best to enable this in the front matter of a page
     githubLink = "rafed/ramium/"

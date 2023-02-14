@@ -21,7 +21,7 @@ This is the source repository for [rh-telco-tigers.github.io](https://rh-telco-t
 
 ## Page Theme
 
-base on https://github.com/adityatelange/hugo-PaperMod
+base on https://github.com/rafed/ramium
 
 To update page theme:
 
