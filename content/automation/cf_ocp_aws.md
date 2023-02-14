@@ -2,7 +2,6 @@
 title: "Deploying OCP in AWS the Manual Way"
 date: 2023-02-13T15:42:47-05:00
 draft: false
-categories: ["Automation", "Public Cloud"]
 tags: ["AWS"]
 author: "Mark DeNeve"
 ---

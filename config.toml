@@ -18,7 +18,7 @@ enableemoji = false
     githubLink = "rafed/ramium/"
 
     tagsInHome = 0     # set zero to not show in home page
-    sectionsInHome = 5  # set zero to not show in home page
+    sectionsInHome = 10  # set zero to not show in home page
     paginatePostsPerPage = 5
     paginateTagsPerPage = 6
 
