@@ -91,14 +91,14 @@ Application Onboarding
 Automation
 </span>
 </a>
-<a href=/hybrid-cloud/>
-<span class="tag is-dark is-large">
-Hybrid Cloud
-</span>
-</a>
 <a href=/incubation/>
 <span class="tag is-dark is-large">
 Incubation
+</span>
+</a>
+<a href=/infrastructure/>
+<span class="tag is-dark is-large">
+Infrastructure
 </span>
 </a>
 <a href=/machine-learning/>
@@ -144,6 +144,114 @@ Public Cloud
 </a>
 </div>
 <div class=blog-brief>
+<a href=/infrastructure/managing-ocp-infrastructures-using-gitops/>
+<h3 class="title is-4">
+Managing Ocp Infrastructures Using Gitops
+</h3>
+</a>
+<div class="level is-mobile details">
+<div class=level-left>
+<div class=level-item>
+<a href=/infrastructure/managing-ocp-infrastructures-using-gitops/>
+<p class="subtitle info date">Mar 6, 2023
+</p>
+</a>
+</div>
+<div class=level-item>
+<a href=/infrastructure/managing-ocp-infrastructures-using-gitops/>
+<p class="subtitle info">
+1 min read
+</p>
+</a>
+</div>
+<div class=level-item>
+<a href=#>
+<p class="subtitle info">|
+Keith Calligan
+</p>
+</a>
+</div>
+</div>
+<div class="level-right is-hidden-touch">
+<a class="tag is-rounded" href=/tags/gitops>Gitops</a>
+<a class="tag is-rounded" href=/tags/ztp>ZTP</a>
+<a class="tag is-rounded" href=/tags/acm>ACM</a>
+</div>
+</div>
+<div>
+<div>
+<a href=/infrastructure/managing-ocp-infrastructures-using-gitops/>
+<p class=summary>
+This multi-part blog series will cover how to deploy bare-metal server resources into an OCP cluster using Gitops tooling
+In the first part of this series, I showed you how the to install the Assisted Service/CIM (Central Infrastructure Management) and how a cluster can be deployed in a declarative manner using approximately 9 YAML files.
+Part 1 of Article Gitops-Blog GitHub Repo
+In the second part of this series, we could see how that YAML files could be condensed into a single SiteConfig file.
+</p>
+</a>
+</div>
+</div>
+<div class="level is-mobile continue-reading">
+<div class=level-left>
+</div>
+<div class=level-right>
+<a href=/infrastructure/managing-ocp-infrastructures-using-gitops/>Continue reading <i class="fa fa-angle-double-right" aria-hidden=true></i></a>
+</div>
+</div>
+<hr>
+</div><div class=blog-brief>
+<a href=/infrastructure/backup-restore-etcd-state/>
+<h3 class="title is-4">
+Backup Restore Etcd State
+</h3>
+</a>
+<div class="level is-mobile details">
+<div class=level-left>
+<div class=level-item>
+<a href=/infrastructure/backup-restore-etcd-state/>
+<p class="subtitle info date">Mar 6, 2023
+</p>
+</a>
+</div>
+<div class=level-item>
+<a href=/infrastructure/backup-restore-etcd-state/>
+<p class="subtitle info">
+1 min read
+</p>
+</a>
+</div>
+<div class=level-item>
+<a href=#>
+<p class="subtitle info">|
+Keith Calligan
+</p>
+</a>
+</div>
+</div>
+<div class="level-right is-hidden-touch">
+<a class="tag is-rounded" href=/tags/backups>Backups</a>
+<a class="tag is-rounded" href=/tags/restores>Restores</a>
+<a class="tag is-rounded" href=/tags/control-plane>Control-Plane</a>
+</div>
+</div>
+<div>
+<div>
+<a href=/infrastructure/backup-restore-etcd-state/>
+<p class=summary>
+This article describes the steps necessary to backup and restore the etcd state on an OCP cluster. The article was written based on version 4.6 of OCP but is still relevent. There are also accompanying videos that show these processes.
+Backup and Restore of ETCD State
+</p>
+</a>
+</div>
+</div>
+<div class="level is-mobile continue-reading">
+<div class=level-left>
+</div>
+<div class=level-right>
+<a href=/infrastructure/backup-restore-etcd-state/>Continue reading <i class="fa fa-angle-double-right" aria-hidden=true></i></a>
+</div>
+</div>
+<hr>
+</div><div class=blog-brief>
 <a href=/automation/mtv/>
 <h3 class="title is-4">
 Migrating VMs From VSphere to OpenShift CNV With Migration Toolkit for Virtualization (MTV)
@@ -294,108 +402,6 @@ Full code available here: RH OSP All In One
 </div>
 <div class=level-right>
 <a href=/private-cloud/rhosp16-all-in-one/>Continue reading <i class="fa fa-angle-double-right" aria-hidden=true></i></a>
-</div>
-</div>
-<hr>
-</div><div class=blog-brief>
-<a href=/private-cloud/hyperconverged-poc/>
-<h3 class="title is-4">
-Hyperconverged UPI OpenShift Cluster
-</h3>
-</a>
-<div class="level is-mobile details">
-<div class=level-left>
-<div class=level-item>
-<a href=/private-cloud/hyperconverged-poc/>
-<p class="subtitle info date">Feb 14, 2023
-</p>
-</a>
-</div>
-<div class=level-item>
-<a href=/private-cloud/hyperconverged-poc/>
-<p class="subtitle info">
-1 min read
-</p>
-</a>
-</div>
-<div class=level-item>
-<a href=#>
-<p class="subtitle info">|
-Balkrishna Pandey
-,
-Ashish Aggarwal
-</p>
-</a>
-</div>
-</div>
-<div class="level-right is-hidden-touch">
-<a class="tag is-rounded" href=/tags/osp>OSP</a>
-</div>
-</div>
-<div>
-<div>
-<a href=/private-cloud/hyperconverged-poc/>
-<p class=summary>
-In this POC we are using Openshift UPI (User Provided Infrastructure) in Opestack Environment. The overall goal is to deploy HAProxy, Keepalived and Coredns inside the same cluster to avoid creating outside DNS entries and load balancers for control plane components. This will allow us to lessen our dependence on external load balancers while also minimizing the resource usage. Hyperconverged cluster extend the use cases of OCP to edge locations where rackspace, cooling and power are limited.
-</p>
-</a>
-</div>
-</div>
-<div class="level is-mobile continue-reading">
-<div class=level-left>
-</div>
-<div class=level-right>
-<a href=/private-cloud/hyperconverged-poc/>Continue reading <i class="fa fa-angle-double-right" aria-hidden=true></i></a>
-</div>
-</div>
-<hr>
-</div><div class=blog-brief>
-<a href=/machine-learning/example-aiml/>
-<h3 class="title is-4">
-This Project Wirtten by ChatGPT
-</h3>
-</a>
-<div class="level is-mobile details">
-<div class=level-left>
-<div class=level-item>
-<a href=/machine-learning/example-aiml/>
-<p class="subtitle info date">Feb 13, 2023
-</p>
-</a>
-</div>
-<div class=level-item>
-<a href=/machine-learning/example-aiml/>
-<p class="subtitle info">
-1 min read
-</p>
-</a>
-</div>
-<div class=level-item>
-<a href=#>
-<p class="subtitle info">|
-Mark DeNeve
-</p>
-</a>
-</div>
-</div>
-<div class="level-right is-hidden-touch">
-<a class="tag is-rounded" href=/tags/pxe_linux>PXE_Linux</a>
-</div>
-</div>
-<div>
-<div>
-<a href=/machine-learning/example-aiml/>
-<p class=summary>
-All your base are belong to us.
-</p>
-</a>
-</div>
-</div>
-<div class="level is-mobile continue-reading">
-<div class=level-left>
-</div>
-<div class=level-right>
-<a href=/machine-learning/example-aiml/>Continue reading <i class="fa fa-angle-double-right" aria-hidden=true></i></a>
 </div>
 </div>
 <hr>
