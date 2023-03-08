@@ -34,16 +34,16 @@ In the second part of this series, we could see how that YAML files could be con
 <meta itemprop=keywords content="Gitops,ZTP,ACM,">
 <link rel=canonical href=https://rh-telco-tigers.github.io/infrastructure/managing-ocp-infrastructures-using-gitops/>
 <link rel=icon type=image/png href=https://rh-telco-tigers.github.io/image/favicon.ico>
-<link rel=stylesheet href=/css/font-awesome.min.css>
-<link rel=stylesheet href=/css/bulma.min.css>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/font-awesome.min.css>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/bulma.min.css>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-9CVMBR3BH1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
-<script src=/js/ramium.js></script>
-<link rel=stylesheet href=/css/ramium.css>
+<script src=https://rh-telco-tigers.github.io/js/ramium.js></script>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/ramium.css>
 </head>
 <body><nav class="navbar is-dark" role=navigation aria-label="main navigation">
 <div class=navbar-brand>
-<a class=navbar-item href=/>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/>
 <strong>Red Hat Telco Tigers Repository </strong>
 </a>
 <a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbarBasicExample>
@@ -54,8 +54,8 @@ In the second part of this series, we could see how that YAML files could be con
 </div>
 <div id=navbarBasicExample class=navbar-menu>
 <div class=navbar-start>
-<a class=navbar-item href=/>Home</a>
-<a class=navbar-item href=/tags/>Tags</a>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/>Home</a>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/tags/>Tags</a>
 </div>
 <div class=navbar-end>
 <div class=navbar-item>
@@ -98,16 +98,16 @@ Keith Calligan
 </div>
 <div class="level-right is-hidden-touch">
 <div class=tags>
-<a class="tag is-dark is-rounded" href=/tags/gitops>Gitops</a>
-<a class="tag is-dark is-rounded" href=/tags/ztp>ZTP</a>
-<a class="tag is-dark is-rounded" href=/tags/acm>ACM</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/gitops>Gitops</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/ztp>ZTP</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/acm>ACM</a>
 </div>
 </div>
 </div>
 <div class="tags is-hidden-desktop">
-<a class="tag is-dark is-rounded" href=/tags/gitops>Gitops</a>
-<a class="tag is-dark is-rounded" href=/tags/ztp>Ztp</a>
-<a class="tag is-dark is-rounded" href=/tags/acm>Acm</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/gitops>Gitops</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/ztp>Ztp</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/acm>Acm</a>
 </div>
 <div class=blog-text>
 <p>This multi-part blog series will cover how to deploy bare-metal server resources into an OCP cluster using Gitops tooling</p>
@@ -126,26 +126,26 @@ Keith Calligan
 <br>
 <div class=share-buttons>
 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f" onclick="return socialMediaPopUp(this.href,'',500,500),!1" title="Share on Facebook. Opens in a new window.">
-<img src=/img/icons/45px/facebook.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/facebook.png>
 </a>
 <a href="https://twitter.com/intent/tweet?text=Managing%20Ocp%20Infrastructures%20Using%20Gitops&url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f" onclick="return socialMediaPopUp(this.href,'',500,500),!1" title="Share on Twitter. Opens in a new window.">
-<img src=/img/icons/45px/twitter.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/twitter.png>
 </a>
 <a href="http://www.reddit.com/submit?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Reddit. Opens in a new window.">
-<img src=/img/icons/45px/reddit.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/reddit.png>
 </a>
 <a href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Pinterest. Opens in a new window.">
-<img src=/img/icons/45px/pinterest.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/pinterest.png>
 </a>
 <a href="http://www.tumblr.com/share/link?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Tumblr. Opens in a new window.">
-<img src=/img/icons/45px/tumblr.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/tumblr.png>
 </a>
 <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f
 			&title=Managing%20Ocp%20Infrastructures%20Using%20Gitops&summary=This%20multi-part%20blog%20series%20will%20cover%20how%20to%20deploy%20bare-metal%20server%20resources%20into%20an%20OCP%20cluster%20using%20Gitops%20tooling%0aIn%20the%20first%20part%20of%20this%20series%2c%20I%20showed%20you%20how%20the%20to%20install%20the%20Assisted%20Service%2fCIM%20%28Central%20Infrastructure%20Management%29%20and%20how%20a%20cluster%20can%20be%20deployed%20in%20a%20declarative%20manner%20using%20approximately%209%20YAML%20files.%0aPart%201%20of%20Article%20Gitops-Blog%20GitHub%20Repo%0aIn%20the%20second%20part%20of%20this%20series%2c%20we%20could%20see%20how%20that%20YAML%20files%20could%20be%20condensed%20into%20a%20single%20SiteConfig%20file.&source=rafed123.github.io" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on LinkedIn. Opens in a new window.">
-<img src=/img/icons/45px/linkedin.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/linkedin.png>
 </a>
 <a href="mailto:?subject=Managing%20Ocp%20Infrastructures%20Using%20Gitops&body=Check out this site https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fmanaging-ocp-infrastructures-using-gitops%2f" title="Share via Email. Opens in a new window.">
-<img src=/img/icons/45px/mail.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/mail.png>
 </a>
 </div>
 </div>

@@ -26,16 +26,16 @@ Backup and Restore of ETCD State"><meta itemprop=datePublished content="2023-03-
 <meta itemprop=keywords content="backups,restores,control-plane,">
 <link rel=canonical href=https://rh-telco-tigers.github.io/infrastructure/backup-restore-etcd-state/>
 <link rel=icon type=image/png href=https://rh-telco-tigers.github.io/image/favicon.ico>
-<link rel=stylesheet href=/css/font-awesome.min.css>
-<link rel=stylesheet href=/css/bulma.min.css>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/font-awesome.min.css>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/bulma.min.css>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-9CVMBR3BH1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
-<script src=/js/ramium.js></script>
-<link rel=stylesheet href=/css/ramium.css>
+<script src=https://rh-telco-tigers.github.io/js/ramium.js></script>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/ramium.css>
 </head>
 <body><nav class="navbar is-dark" role=navigation aria-label="main navigation">
 <div class=navbar-brand>
-<a class=navbar-item href=/>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/>
 <strong>Red Hat Telco Tigers Repository </strong>
 </a>
 <a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbarBasicExample>
@@ -46,8 +46,8 @@ Backup and Restore of ETCD State"><meta itemprop=datePublished content="2023-03-
 </div>
 <div id=navbarBasicExample class=navbar-menu>
 <div class=navbar-start>
-<a class=navbar-item href=/>Home</a>
-<a class=navbar-item href=/tags/>Tags</a>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/>Home</a>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/tags/>Tags</a>
 </div>
 <div class=navbar-end>
 <div class=navbar-item>
@@ -90,16 +90,16 @@ Keith Calligan
 </div>
 <div class="level-right is-hidden-touch">
 <div class=tags>
-<a class="tag is-dark is-rounded" href=/tags/backups>Backups</a>
-<a class="tag is-dark is-rounded" href=/tags/restores>Restores</a>
-<a class="tag is-dark is-rounded" href=/tags/control-plane>Control-Plane</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/backups>Backups</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/restores>Restores</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/control-plane>Control-Plane</a>
 </div>
 </div>
 </div>
 <div class="tags is-hidden-desktop">
-<a class="tag is-dark is-rounded" href=/tags/backups>Backups</a>
-<a class="tag is-dark is-rounded" href=/tags/restores>Restores</a>
-<a class="tag is-dark is-rounded" href=/tags/control-plane>Control plane</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/backups>Backups</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/restores>Restores</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/control-plane>Control plane</a>
 </div>
 <div class=blog-text>
 <p>This article describes the steps necessary to backup and restore the etcd state on an OCP cluster. The article was written based on version 4.6 of OCP but is still relevent. There are also accompanying videos that show these processes.</p>
@@ -110,26 +110,26 @@ Keith Calligan
 <br>
 <div class=share-buttons>
 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f" onclick="return socialMediaPopUp(this.href,'',500,500),!1" title="Share on Facebook. Opens in a new window.">
-<img src=/img/icons/45px/facebook.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/facebook.png>
 </a>
 <a href="https://twitter.com/intent/tweet?text=Backup%20Restore%20Etcd%20State&url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f" onclick="return socialMediaPopUp(this.href,'',500,500),!1" title="Share on Twitter. Opens in a new window.">
-<img src=/img/icons/45px/twitter.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/twitter.png>
 </a>
 <a href="http://www.reddit.com/submit?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Reddit. Opens in a new window.">
-<img src=/img/icons/45px/reddit.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/reddit.png>
 </a>
 <a href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Pinterest. Opens in a new window.">
-<img src=/img/icons/45px/pinterest.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/pinterest.png>
 </a>
 <a href="http://www.tumblr.com/share/link?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Tumblr. Opens in a new window.">
-<img src=/img/icons/45px/tumblr.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/tumblr.png>
 </a>
 <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f
 			&title=Backup%20Restore%20Etcd%20State&summary=This%20article%20describes%20the%20steps%20necessary%20to%20backup%20and%20restore%20the%20etcd%20state%20on%20an%20OCP%20cluster.%20The%20article%20was%20written%20based%20on%20version%204.6%20of%20OCP%20but%20is%20still%20relevent.%20There%20are%20also%20accompanying%20videos%20that%20show%20these%20processes.%0aBackup%20and%20Restore%20of%20ETCD%20State&source=rafed123.github.io" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on LinkedIn. Opens in a new window.">
-<img src=/img/icons/45px/linkedin.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/linkedin.png>
 </a>
 <a href="mailto:?subject=Backup%20Restore%20Etcd%20State&body=Check out this site https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fbackup-restore-etcd-state%2f" title="Share via Email. Opens in a new window.">
-<img src=/img/icons/45px/mail.png>
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/mail.png>
 </a>
 </div>
 </div>
