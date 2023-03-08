@@ -6,4 +6,4 @@ tags: ["AWS"]
 authors: ["Mark DeNeve"]
 ---
 
-An example hybrid cloud repository.
+An example app on boarding post.

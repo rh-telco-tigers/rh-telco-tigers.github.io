@@ -1,5 +1,5 @@
 baseURL = "https://rh-telco-tigers.github.io/"
-#CanonifyURLs=true
+CanonifyURLs=true
 
 languageCode = "en-us"
 theme = "ramium"
@@ -18,9 +18,9 @@ enableemoji = false
     githubLink = "rafed/ramium/"
 
     tagsInHome = 0     # set zero to not show in home page
-    sectionsInHome = 10  # set zero to not show in home page
+    sectionsInHome = 12  # set zero to not show in home page
     paginatePostsPerPage = 5
-    paginateTagsPerPage = 6
+    paginateTagsPerPage = 18
 
 [taxonomies]
     tag = "tags"

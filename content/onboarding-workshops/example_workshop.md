@@ -6,4 +6,4 @@ tags: ["Ansible"]
 authors: ["Mark DeNeve"]
 ---
 
-An example hybrid cloud repository.
+An example workshop article.
