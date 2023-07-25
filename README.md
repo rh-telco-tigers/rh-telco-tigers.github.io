@@ -10,6 +10,7 @@ When you create new content for this site, you will need to place it into one of
 * application-onboarding
 * hybrid-cloud
 * incubation
+* infrastructure
 * machine-learning
 * middleware
 * onboarding-workshops
