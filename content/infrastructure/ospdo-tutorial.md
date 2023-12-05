@@ -4,7 +4,7 @@ date: 2023-12-04T16:53:26-06:00
 tags: ["OpenShift", "OpenStack"]
 categories: ["Demos"]
 draft: false
-authors: ["Motohiro Abe"]
+authors: ["Motohiro Abe", "Karim Latouche"]
 ---
 
 This tutorial aims to provide an OpenStack deployment procedure using the OpenStack director operator on OpenShift, utilizing minimal OpenStack templates and steps. 
