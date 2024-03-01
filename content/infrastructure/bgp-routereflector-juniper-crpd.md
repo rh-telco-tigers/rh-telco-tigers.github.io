@@ -1,6 +1,6 @@
 ---
-title: "Juniper cRPD on OCP, BGP route reflector"
-date: 2024-03-01T14:01:00-05:00
+title: "Bgp Routereflector Juniper Crpd"
+date: 2024-03-01T11:25:42-06:00
 tags: ["OpenShift", "Juniper", "cRPD", "BGP"]
 categories: ["Demos"]
 draft: false
