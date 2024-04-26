@@ -1,0 +1,157 @@
+<!doctype html><html lang=en-us>
+<head><title>
+Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters |
+Red Hat Telco Tigers Repository</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="This article describes the deployment of Open5GC elements across two OpenShift private clusters. Subsequently, it delves into the utilization of a public cluster as a relay cluster via Skupper.
+Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters
+    ">
+<meta property="og:title" content="Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters">
+<meta property="og:description" content="This article describes the deployment of Open5GC elements across two OpenShift private clusters. Subsequently, it delves into the utilization of a public cluster as a relay cluster via Skupper.
+Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rh-telco-tigers.github.io/infrastructure/open5gs-skupper/"><meta property="article:section" content="infrastructure">
+<meta property="article:published_time" content="2024-04-26T12:45:59-05:00">
+<meta property="article:modified_time" content="2024-04-26T12:45:59-05:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters">
+<meta name=twitter:description content="This article describes the deployment of Open5GC elements across two OpenShift private clusters. Subsequently, it delves into the utilization of a public cluster as a relay cluster via Skupper.
+Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters">
+<meta itemprop=name content="Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters">
+<meta itemprop=description content="This article describes the deployment of Open5GC elements across two OpenShift private clusters. Subsequently, it delves into the utilization of a public cluster as a relay cluster via Skupper.
+Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters"><meta itemprop=datePublished content="2024-04-26T12:45:59-05:00">
+<meta itemprop=dateModified content="2024-04-26T12:45:59-05:00">
+<meta itemprop=wordCount content="39">
+<meta itemprop=keywords content="Service Interconnect,Skupper,Open5GS,">
+<link rel=canonical href=https://rh-telco-tigers.github.io/infrastructure/open5gs-skupper/>
+<link rel=icon type=image/png href=https://rh-telco-tigers.github.io/image/favicon.ico>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/font-awesome.min.css>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/bulma.min.css>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-9CVMBR3BH1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<script src=https://rh-telco-tigers.github.io/js/ramium.js></script>
+<link rel=stylesheet href=https://rh-telco-tigers.github.io/css/ramium.css>
+</head>
+<body><nav class="navbar is-dark" role=navigation aria-label="main navigation">
+<div class=navbar-brand>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/>
+<strong>Red Hat Telco Tigers Repository </strong>
+</a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbarBasicExample>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+</div>
+<div id=navbarBasicExample class=navbar-menu>
+<div class=navbar-start>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/>Home</a>
+<a class=navbar-item href=https://rh-telco-tigers.github.io/tags/>Tags</a>
+</div>
+<div class=navbar-end>
+<div class=navbar-item>
+<form id=cse-search-box-form-id onsubmit="return executeQuery()" role=search>
+<div class="field has-addons">
+<div class="control is-expanded">
+<input id=cse-search-input-box-id size=15 class=input type=text autocomplete=off placeholder="&#xf1a0; Google search" style=font-family:Arial,FontAwesome>
+</div>
+<div class=control>
+<button type=submit class="button is-black">
+<i class="fa fa-search"></i>
+</a>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</nav><div class="columns is-centered">
+<div id=page-body class="column is-7">
+<div class="content blog">
+<h1>Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters</h1>
+<div id=infobar class="level is-mobile">
+<div class=level-left>
+<div class=level-item>
+<p class="subtitle info date">Apr 26, 2024
+</p>
+</div>
+<div class=level-item>
+<p class="subtitle info">
+1 min read
+</p>
+</div>
+<div class=level-item>
+<p class="subtitle info"> |
+Motohiro Abe
+</p>
+</div>
+</div>
+<div class="level-right is-hidden-touch">
+<div class=tags>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/service-interconnect>Service Interconnect</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/skupper>Skupper</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/open5gs>Open5GS</a>
+</div>
+</div>
+</div>
+<div class="tags is-hidden-desktop">
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/service-interconnect>Service interconnect</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/skupper>Skupper</a>
+<a class="tag is-dark is-rounded" href=https://rh-telco-tigers.github.io/tags/open5gs>Open5 gs</a>
+</div>
+<div class=blog-text>
+<p>This article describes the deployment of Open5GC elements across two OpenShift private clusters. Subsequently, it delves into the utilization of a public cluster as a relay cluster via Skupper.</p>
+<p><a href=https://cloudcult.dev/red-hat-service-interconnect-example-open5gs-deployment-on-multi-private-clusters-2/>Red Hat Service Interconnect Example: Open5GS Deployment on Multi-Private Clusters</a></p>
+</div>
+</div><div id=social-media-share class=has-text-centered>
+<p><i>Sharing is caring!</i></p>
+<br>
+<div class=share-buttons>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f" onclick="return socialMediaPopUp(this.href,'',500,500),!1" title="Share on Facebook. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/facebook.png>
+</a>
+<a href="https://twitter.com/intent/tweet?text=Red%20Hat%20Service%20Interconnect%20Example%3a%20Open5GS%20Deployment%20on%20Multi-Private%20Clusters&url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f" onclick="return socialMediaPopUp(this.href,'',500,500),!1" title="Share on Twitter. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/twitter.png>
+</a>
+<a href="http://www.reddit.com/submit?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Reddit. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/reddit.png>
+</a>
+<a href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Pinterest. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/pinterest.png>
+</a>
+<a href="http://www.tumblr.com/share/link?url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on Tumblr. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/tumblr.png>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f
+			&title=Red%20Hat%20Service%20Interconnect%20Example%3a%20Open5GS%20Deployment%20on%20Multi-Private%20Clusters&summary=This%20article%20describes%20the%20deployment%20of%20Open5GC%20elements%20across%20two%20OpenShift%20private%20clusters.%20Subsequently%2c%20it%20delves%20into%20the%20utilization%20of%20a%20public%20cluster%20as%20a%20relay%20cluster%20via%20Skupper.%0aRed%20Hat%20Service%20Interconnect%20Example%3a%20Open5GS%20Deployment%20on%20Multi-Private%20Clusters&source=rafed123.github.io" onclick="return socialMediaPopUp(this.href,'',900,500),!1" title="Share on LinkedIn. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/linkedin.png>
+</a>
+<a href="mailto:?subject=Red%20Hat%20Service%20Interconnect%20Example%3a%20Open5GS%20Deployment%20on%20Multi-Private%20Clusters&body=Check out this site https%3a%2f%2frh-telco-tigers.github.io%2finfrastructure%2fopen5gs-skupper%2f" title="Share via Email. Opens in a new window.">
+<img src=https://rh-telco-tigers.github.io/img/icons/45px/mail.png>
+</a>
+</div>
+</div>
+<br>
+<div id=disqus_thread></div>
+<script type=text/javascript>(function(){var a,b;if(window.location.hostname=="localhost")return;a=document.createElement('script'),a.type='text/javascript',a.async=!0,b='disqus-code',a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+</div>
+</div>
+<script async src="https://cse.google.com/cse.js?cx=f1a47ecc2081e40b1"></script>
+<gcse:searchresults-only></gcse:searchresults-only>
+<footer class="footer has-background-dark">
+<div class="content has-text-centered has-text-white">
+<p>
+© 2020 Ramium. Powered by
+<a class=has-text-light href=https://github.com/gohugoio/hugo target=_blank>
+Hugo</a>. Theme
+<a class=has-text-light href=https://github.com/rafed123/ramium/ target=_blank>
+Ramium.
+</a>
+</p>
+</div>
+</footer>
+</body>
+</html>
